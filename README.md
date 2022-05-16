@@ -1,17 +1,12 @@
-# Name（リポジトリ/プロジェクト/OSSなどの名前）
+# Calender-go
  
-分かりやすくてカッコイイ名前をつける（今回は"hoge"という名前をつける）
- 
-"hoge"が何かを簡潔に紹介する
+Google CalenderをGoで作成！
+クリーンアーキテクチャ・APIサーバー・mockテストで実装
  
 # DEMO
  
 "hoge"の魅力が直感的に伝えわるデモ動画や図解を載せる
- 
-# Features
- 
-"hoge"のセールスポイントや差別化などを説明する
- 
+  
 # Requirement
  
 "hoge"を動かすのに必要なライブラリなどを列挙する
@@ -36,7 +31,12 @@ git clone https://github.com/hoge/~
 cd examples
 python demo.py
 ```
- 
+
+# Function
+
+* 実装した機能 1
+* 実装した機能 2
+* 実装した機能 3
 # Note
  
 注意点などがあれば書く
