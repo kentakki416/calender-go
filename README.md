@@ -13,6 +13,8 @@ Google CalenderをGoで作成！
  
 * huga 3.5.2
 * hogehuga 1.0.2
+* Day.js
+* Material-UI
  
 # Installation
  
@@ -34,9 +36,12 @@ python demo.py
 
 # Function
 
-* 実装した機能 1
-* 実装した機能 2
-* 実装した機能 3
+* カレンダーのロジック作成・表示
+* カレンダーの月の切り替え
+* 予定の追加
+* 予定の詳細表示
+* 予定の削除
+* サーバーからデータの取得と保存
 # Note
  
 注意点などがあれば書く
