@@ -8,11 +8,13 @@ import HelpOutlineIcon from '@material-ui/icons/HelpOutline';
 import SettingsIcon from '@material-ui/icons/Settings';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import AppsIcon from '@material-ui/icons/Apps';
+import Button from '@material-ui/core/Button';
 
 
 
 const StyledToolbar = withStyles({
-    root: { padding: "0" }
+    root: { padding: "0",
+            marginLeft: "10px"}
 })(Toolbar);
 
 const StyledTypography = withStyles({
@@ -27,17 +29,22 @@ const StyledDatePicker = withStyles({
     root: { marginLeft: 30}
 })(DatePicker);
 
+const StyledButton = withStyles({
+    root: {marginRight: "30px"}
+})(Button);
 
-const Navigation = ({setNextMonth, setPreviousMonth, setMonth, month}) => {
+
+const Navigation = ({setCurrentMonth, setNextMonth, setPreviousMonth, setMonth, month, changeActive}) => {
     return (
         <StyledToolbar>
-            <IconButton>
+            <IconButton onClick={changeActive}>
                 <DehazeIcon />
             </IconButton>
-            <img src="/images/calendar_icon.png" width="40" height="40" />
+            <img src="/images/calendar_icon.png" width="40" height="40" alt="calendar" />
             <StyledTypography color="textSecondary" variant="h5" component="h1">
                 カレンダー
             </StyledTypography>
+            <StyledButton variant="outlined" onClick={setCurrentMonth} size="small">Today</StyledButton>
             <IconButton size="small" onClick={setPreviousMonth}>
                 <ArrowBackIos />
             </IconButton>

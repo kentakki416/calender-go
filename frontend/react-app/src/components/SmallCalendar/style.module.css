@@ -1,0 +1,67 @@
+.smallCalendar {
+    margin-top: 2.25rem; /* 36px */
+}
+.header {
+    display:flex;
+    justify-content: space-between;
+}
+.title {
+    color: rgb(107 114 128);
+    font-weight: 700;
+}
+.button {
+    background-color:white;
+    border: none;
+    outline:none;
+    padding:0;
+}
+.button:active {
+    outline:none;
+    border:0px solid black;
+}
+
+.arrowLeft {
+    border-bottom: solid 2px rgb(107 114 128);
+    border-left: solid 2px rgb(107 114 128);
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+    cursor:pointer;
+}
+.arrowRight {
+    border-top: solid 2px rgb(107 114 128);
+    border-right: solid 2px rgb(107 114 128);
+    width: 10px;
+    height: 10px;
+    transform: rotate(45deg);
+    cursor:pointer;
+}
+
+/* ------smallCalendar------------------ */
+.grid {
+    display:grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    grid-template-rows: repeat(6, minmax(0, 1fr));
+}
+
+.smallWeek {
+    padding-top: 0.25rem; /* 4px */
+    padding-bottom: 0.25rem; /* 4px */
+    text-align: center;
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.25rem; /* 20px */
+    color: rgba(0, 0, 0, 0.54);
+}
+.smallCal {
+    background-color: white;
+    padding-top: 0.25rem; /* 4px */
+    padding-bottom: 0.25rem; /* 4px */
+    width: 100%;
+    border:0px solid black;
+    outline:none;
+}
+.sp {
+    color:rgba(0, 0, 0, 0.87);
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.25rem; /* 20px */
+}

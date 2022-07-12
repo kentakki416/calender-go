@@ -318,17 +318,10 @@ fieldset {
     border: 2px groove ThreeDFace;
     min-width: -webkit-min-content;
 }
-button {
-    -webkit-appearance: button;
-}
-/* Form controls don't go vertical. */
-input, textarea, keygen, select, button, meter, progress {
-    -webkit-writing-mode: horizontal-tb !important;
-}
+
 input, textarea, keygen, select, button {
     margin: 0__qem;
     font: -webkit-small-control;
-    text-rendering: auto; /* FIXME: Remove when tabs work with optimizeLegibility. */
     color: initial;
     letter-spacing: normal;
     word-spacing: normal;
@@ -364,15 +357,7 @@ input::-webkit-textfield-decoration-container {
 input[type="search" i]::-webkit-textfield-decoration-container {
     direction: ltr;
 }
-input::-webkit-clear-button {
-    -webkit-appearance: searchfield-cancel-button;
-    display: inline-block;
-    flex: none;
-    -webkit-user-modify: read-only !important;
-    -webkit-margin-start: 2px;
-    opacity: 0;
-    pointer-events: none;
-}
+
 input:enabled:read-write:-webkit-any(:focus,:hover)::-webkit-clear-button {
     opacity: 1;
     pointer-events: auto;
@@ -476,11 +461,7 @@ input[type="radio" i], input[type="checkbox" i] {
     background-color: initial;
     border: initial;
 }
-input[type="button" i], input[type="submit" i], input[type="reset" i] {
-    -webkit-appearance: push-button;
-    -webkit-user-select: none;
-    white-space: pre
-}
+
 input[type="file" i]::-webkit-file-upload-button {
     -webkit-appearance: push-button;
     -webkit-user-modify: read-only !important;
@@ -494,8 +475,7 @@ input[type="button" i], input[type="submit" i], input[type="reset" i], input[typ
     cursor: default;
     color: ButtonText;
     padding: 2px 6px 3px 6px;
-    border: 2px outset ButtonFace;
-    background-color: ButtonFace;
+    border: 2px solid ButtonFace;
     box-sizing: border-box
 }
 input[type="range" i] {
@@ -532,12 +512,8 @@ select:disabled, keygen:disabled, optgroup:disabled, option:disabled,
 select[disabled]>option {
     color: GrayText
 }
-input[type="button" i]:active, input[type="submit" i]:active, input[type="reset" i]:active, input[type="file" i]:active::-webkit-file-upload-button, button:active {
-    border-style: inset
-}
-input[type="button" i]:active:disabled, input[type="submit" i]:active:disabled, input[type="reset" i]:active:disabled, input[type="file" i]:active:disabled::-webkit-file-upload-button, button:active:disabled {
-    border-style: outset
-}
+
+
 option:-internal-spatial-navigation-focus {
     outline: black dashed 1px;
     outline-offset: -1px;
@@ -564,7 +540,6 @@ input[type="color" i] {
     -webkit-appearance: square-button;
     width: 44px;
     height: 23px;
-    background-color: ButtonFace;
     /* Same as native_theme_base. */
     border: 1px #a9a9a9 solid;
     padding: 1px 2px;

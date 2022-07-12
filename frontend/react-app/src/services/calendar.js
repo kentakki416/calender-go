@@ -67,7 +67,7 @@ export const getNextMonth = month => {
 /**
  * 前月を返す関数
  * @param {object} month 
- * @returns 
+ * @returns object
  */
 export const getPreviousMonth = month => {
   const day = getMonth(month).add(-1, "month");
@@ -75,9 +75,20 @@ export const getPreviousMonth = month => {
 }
 
 /**
+ * 今月を返す関数
+ * @param {object} month 
+ * @returns object
+ */
+export const getCurrentMonth = () => {
+  const today = dayjs();
+  return formatMonth(today);
+
+}
+
+/**
  * 月と年を格納するオブジェクトにformatする関数
  * @param {object} day 
- * @returns 
+ * @returns object 
  */
 export const formatMonth = day => ({
   month: day.month() + 1,

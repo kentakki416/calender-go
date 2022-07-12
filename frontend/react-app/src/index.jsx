@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import ReactDOM from "react-dom/client";
 import dayjs from "dayjs";
 import "dayjs/locale/ja";
@@ -12,7 +12,8 @@ import Navigation from "./components/Navigation/container";
 
 import DayjsUtils from "@date-io/dayjs";
 import { MuiPickersUtilsProvider } from "@material-ui/pickers";
-
+import  Sidemenu  from "./components/Sidemenu/container";
+import AddScheduleDialog from "./components/AddScheduleDialog/container";
 // dayjsを日本の日付に設定
 dayjs.locale("ja");
 
@@ -22,18 +23,28 @@ const root = ReactDOM.createRoot(container);
 // storeを作成
 const store = createStore(rootReducer);
 
-const App = () => (
-  <div className={resetCss}>
+
+
+const App = () => {
+  const [active, setActive] = useState(false);
+  const value = {
+    active, 
+    setActive,
+  }
+  return (
+    <div className={resetCss}>
     <Provider store={store} >
       <MuiPickersUtilsProvider utils={DayjsUtils}>
-        <Navigation/>
-          <div style={{margin: '2px'}}>
+        <Navigation value={{value}}/>
+          <div style={{margin: '2px', display: 'flex'}}>
+            <Sidemenu/>
           <CalendarBoard/>
+          <AddScheduleDialog/>
           </div>
-        
       </MuiPickersUtilsProvider>
     </Provider>
   </div>
-  );
+  )
+};
 
 root.render(<App />);
