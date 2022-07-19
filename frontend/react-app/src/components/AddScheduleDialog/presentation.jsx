@@ -11,7 +11,15 @@ const Title = withStyles({
     root: {marginBottom: 32, fontSize:22 }
 })(Input);
 
-const AddScheduleDialog = ({schedule: {form:{title, location, description, date},isDialogOpen}, closeDialog, setSchedule}) => {
+const AddScheduleDialog = ({
+    schedule: {
+        form:{title, location, description, date},
+        isDialogOpen
+    }, 
+    closeDialog, 
+    setSchedule,
+    saveSchedule
+}) => {
     return (
         <Dialog open={isDialogOpen} onClose={closeDialog} maxWidth="xs" fullWidth>
             <div style={{textAlign:"right"}}>
@@ -73,7 +81,7 @@ const AddScheduleDialog = ({schedule: {form:{title, location, description, date}
                 </Grid>
             </DialogContent>
             <DialogActions>
-                <Button color="primary" variant="outlined">
+                <Button color="primary" variant="outlined" onClick={saveSchedule}>
                     保存
                 </Button>
             </DialogActions>
