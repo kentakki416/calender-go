@@ -5,6 +5,7 @@ import "dayjs/locale/ja";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
+import ErrorSnackbar from "./components/ErrorSnackbar/container";
 
 import rootReducer from "./redux/rootReducer";
 import CalendarBoard from "./components/CalendarBoard/container";
@@ -44,6 +45,7 @@ const App = () => {
           <CalendarBoard/>
           <AddScheduleDialog/>
           <CurrentScheduleDialog />
+          <ErrorSnackbar/>
           </div>
       </MuiPickersUtilsProvider>
     </Provider>

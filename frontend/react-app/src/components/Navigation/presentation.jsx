@@ -1,6 +1,6 @@
 import React from "react";
 import { DatePicker } from "@material-ui/pickers";
-import { IconButton, Toolbar, Typography, withStyles } from "@material-ui/core";
+import { IconButton, Toolbar, Typography, withStyles, Tooltip } from "@material-ui/core";
 import DehazeIcon from "@material-ui/icons/Dehaze"
 import { ArrowBackIos, ArrowForwardIos } from "@material-ui/icons";
 import SearchIcon from '@material-ui/icons/Search';
@@ -45,12 +45,16 @@ const Navigation = ({setCurrentMonth, setNextMonth, setPreviousMonth, setMonth, 
                 カレンダー
             </StyledTypography>
             <StyledButton variant="outlined" onClick={setCurrentMonth} size="small">Today</StyledButton>
-            <IconButton size="small" onClick={setPreviousMonth}>
-                <ArrowBackIos />
-            </IconButton>
-            <IconButton size="small" onClick={setNextMonth}>
-                <ArrowForwardIos />
-            </IconButton>
+            <Tooltip title="前の月" placement="bottom">
+                <IconButton size="small" onClick={setPreviousMonth}>
+                    <ArrowBackIos />
+                </IconButton>
+            </Tooltip>
+            <Tooltip title="次の月" placement="bottom">
+                <IconButton size="small" onClick={setNextMonth}>
+                    <ArrowForwardIos />
+                </IconButton>
+            </Tooltip>
             <StyledDatePicker
                 value={month}
                 onChange={setMonth}
@@ -59,21 +63,31 @@ const Navigation = ({setCurrentMonth, setNextMonth, setPreviousMonth, setMonth, 
                 animateYearScrolling
                 disableToolbar
             />
-            <StyledIconButton size="medium">
-                <SearchIcon/>
-            </StyledIconButton>
-            <IconButton size="medium">
-                <HelpOutlineIcon/>
-            </IconButton>
-            <IconButton size="medium">
-                <SettingsIcon/>
-            </IconButton>
-            <IconButton size="medium">
-                <AppsIcon/>
-            </IconButton>
-            <IconButton size="medium">
-                <AccountCircleIcon style={{fontSize: 30}}/>
-            </IconButton>
+            <Tooltip title="検索" placement="bottom">
+                <StyledIconButton size="medium">
+                    <SearchIcon/>
+                </StyledIconButton>
+            </Tooltip>
+            <Tooltip title="ヘルプ" placement="bottom">
+                <IconButton size="medium">
+                    <HelpOutlineIcon/>
+                </IconButton>
+            </Tooltip>
+            <Tooltip title="設定" placement="bottom">
+                <IconButton size="medium">
+                    <SettingsIcon/>
+                </IconButton>
+            </Tooltip>
+            <Tooltip title="アプリ" placement="bottom">
+                <IconButton size="medium">
+                    <AppsIcon/>
+                </IconButton>
+            </Tooltip>
+            <Tooltip title="アカウント" placement="bottom">
+                <IconButton size="medium">
+                    <AccountCircleIcon style={{fontSize: 30}}/>
+                </IconButton>
+            </Tooltip>
         </StyledToolbar>
     );
 };
