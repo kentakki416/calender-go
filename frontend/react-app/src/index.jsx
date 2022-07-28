@@ -3,7 +3,8 @@ import ReactDOM from "react-dom/client";
 import dayjs from "dayjs";
 import "dayjs/locale/ja";
 import { Provider } from "react-redux";
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
+import thunk from "redux-thunk";
 
 import rootReducer from "./redux/rootReducer";
 import CalendarBoard from "./components/CalendarBoard/container";
@@ -23,7 +24,7 @@ const container = document.getElementById("root");
 const root = ReactDOM.createRoot(container);
 
 // storeを作成
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(thunk));
 
 
 

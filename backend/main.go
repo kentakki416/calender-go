@@ -1,17 +1,10 @@
 package main
 
 import (
-	"fmt"
-	"net/http"
+	"github.com/kentakki416/calender-go/backend/router"
 )
 
 func main() {
-	// controller
-	http.HandleFunc("/", echoHello)
-	// port
-	http.ListenAndServe(":8000", nil)
-}
+	router.Run()
 
-func echoHello(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "<h1>Hello World!</h1>")
 }
