@@ -31,8 +31,8 @@ const mapDispatchToProps = dispatch => ({
 
 const mergeProps = (stateProps, dispatchProps) => {
     const {
-        calendar: month,
-        schedules: { items: schedules }
+        calendar: month, //rename
+        schedules: { items: schedules } //rename
     } = stateProps;
 
     const calendar = setSchedules(createCalendar(month), schedules);

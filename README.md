@@ -1,19 +1,20 @@
 # Calender-go
  
-Google CalenderをGoで作成！
-クリーンアーキテクチャ・APIサーバー・mockテストで実装
+React, redux, GoのAPIserverでgoogle Calendarを作成！
  
 # DEMO
  
-"hoge"の魅力が直感的に伝えわるデモ動画や図解を載せる
+![MainImage](images/main.png)
+![AddImage](images/add.png)
+![ViewImage](images/view.png)
   
 # Requirement
  
-"hoge"を動かすのに必要なライブラリなどを列挙する
- 
-* huga 3.5.2
+* react 18.2.0
+* redux 4.2.0
+* redux-thunk 2.4.1
 * hogehuga 1.0.2
-* Day.js
+* dayjs 1.11.3
 * Material-UI
  
 # Installation

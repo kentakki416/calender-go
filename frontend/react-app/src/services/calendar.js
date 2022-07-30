@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 export const createCalendar = month => {
   // 今月の最初の日を追加
   const firstDay = getMonth(month);
-  const firstDayIndex = firstDay.day();
+  const firstDayIndex = firstDay.day(); // 曜日 0(日曜日)~6（土曜日）
 
   return Array(35)
     .fill(0)

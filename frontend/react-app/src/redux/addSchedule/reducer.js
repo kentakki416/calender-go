@@ -23,8 +23,6 @@ const addScheduleReducer = (state = init, action) => {
 
     switch (type) {
         case ADD_SCHEDULE_SET_VALUE:
-            // 現在のstateの中に新しいformを追加しつつ、
-            // form中でも現在のformに対して新しいデータを展開して追加
             return { ...state, form: { ...state.form, ...payload}};
         case ADD_SCHEDULE_OPEN_DIALOG:
             return { ...state, isDialogOpen: true};
